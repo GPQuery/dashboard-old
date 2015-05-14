@@ -1,6 +1,11 @@
 'use strict';
 
-angular.module('gpqDash', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ngMaterial'])
+angular.module('gpqDash', [
+  // Angular Modules
+  'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngMaterial',
+
+  // Third Party Modules
+  'ui.router', 'nvd3'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
