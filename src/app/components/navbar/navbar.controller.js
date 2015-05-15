@@ -1,6 +1,9 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('gpqDash')
-  .controller('NavbarCtrl', function ($scope) {
-    $scope.date = new Date();
-  });
+  angular.module('gpqDash')
+    .controller('Navbar', Navbar);
+
+    function Navbar() {
+    }
+})();
