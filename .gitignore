@@ -4,3 +4,4 @@ bower_components/
 .tmp/
 dist/
 *ignore*
+.DS_Store
