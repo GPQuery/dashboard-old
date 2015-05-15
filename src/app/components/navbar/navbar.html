@@ -1,8 +1,55 @@
-<md-toolbar layout="row" layout-align="center center" ng-controller="Navbar as vm">
+<md-toolbar class="md-tall" layout="column" layout-align="center center" ng-controller="Navbar as nm">
 
   <div class="md-toolbar-tools">
-    <h2>gpqDash</h2>
-    <span flex></span>
+
+    <md-button class="md-icon-button" aria="Open Sidenav" ng-click="vm.toggleSidenav()">
+      <md-icon md-svg-icon="assets/icons/ic_menu_48px.svg"></md-icon>
+    </md-button>
+
+    <form flex ng-submit="$event.preventDefault()">
+      <md-autocomplete
+          placeholder="2015 Spanish Grand Prix"
+          md-selected-item="nm.selectedItem"
+          md-search-text-change="nm.searchChange(nm.searchText)"
+          md-search-text="nm.searchText"
+          md-selected-item-change="nm.selectChange(item)"
+          md-items="item in nm.querySearch(nm.searchText)"
+          md-item-text="item.display"
+          md-display="500"
+          md-min-length="0">
+        <md-item-template>
+          <span md-highlight-text="nm.searchText" md-highlight-flags="^i">{{item.display}}</span>
+        </md-item-template>
+        <md-not-found>
+          No matches found for "{{nm.searchText}}".
+        </md-not-found>
+      </md-autocomplete>
+    </form>
+
+  </div>
+
+  <div class="md-toolbar-tools md-toolbar-tools-bottom">
+
+    <md-tabs flex md-stretch-tabs="always">
+
+      <md-tab>
+        <md-tab-label>Overview</md-tab-label>
+      </md-tab>
+      <md-tab>
+        <md-tab-label>Details</md-tab-label>
+      </md-tab>
+      <md-tab>
+        <md-tab-label>Results</md-tab-label>
+      </md-tab>
+      <md-tab>
+        <md-tab-label>Standings</md-tab-label>
+      </md-tab>
+      <md-tab>
+        <md-tab-label>Miscellaneous</md-tab-label>
+      </md-tab>
+
+    </md-tabs>
+
   </div>
 
 </md-toolbar>
