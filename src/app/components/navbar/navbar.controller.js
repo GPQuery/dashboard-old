@@ -6,10 +6,10 @@
 
     function Navbar($timeout, $log, $q) {
       var vm = this;
-      vm.races        = loadAll();
-      vm.querySearch  = querySearch;
-      vm.selectChange = selectChange;
-      vm.searchChange = searchChange;
+      vm.races        = loadAll();        // Load Autocomplete Options
+      vm.querySearch  = querySearch;      // Search Autocomplete Query
+      vm.selectChange = selectChange;     // Change in Selected Option
+      vm.searchChange = searchChange;     // Change in Search Query
 
       // 
       // $timeout is used to simulate dataservice for now

@@ -4,7 +4,7 @@
   angular.module('gpqDash')
     .controller('Dashboard', Dashboard);
 
-    function Dashboard($mdSidenav) {
+    function Dashboard($mdSidenav, $log) {
       var vm = this;
 
       vm.toggleSidenav  = toggleSidenav;
