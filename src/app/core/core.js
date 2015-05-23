@@ -16,22 +16,9 @@ var core = angular.module('gpqDash.core', [
 ]);
 
 // Configure Routes and Material Theme
-core.config(uiRouterConfig)
+core.
   .config(mdThemingConfig);
 
-function uiRouterConfig($stateProvider, $urlRouterProvider) {
-  $stateProvider
-    .state('index', {
-      url: '/',
-      templateUrl: 'app/dashboard/overview.html',
-      controller: function() {
-        var self = this;
-        self.items = ['Item 1', 'Object 3', 'Penis'];
-      },
-      controllerAs: 'rm'
-    });
-  $urlRouterProvider.otherwise('/');
-}
 
 function mdThemingConfig($mdThemingProvider) {
   
