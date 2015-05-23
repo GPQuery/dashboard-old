@@ -11,6 +11,7 @@
       vm.selectChange = selectChange;     // Change in Selected Option
       vm.searchChange = searchChange;     // Change in Search Query
 
+
       // 
       // $timeout is used to simulate dataservice for now
       //

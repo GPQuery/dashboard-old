@@ -25,7 +25,7 @@
 │   │   ├── 
 │   │   └── 
 │   ├── app.js
-│   ├── app.scss                            --> TODO: rename to `main.scss`
+│   ├── app.scss
 │   ├── vendor.scss
 │   └── README.md
 ├── assets/
