@@ -6,8 +6,27 @@ angular.module('gpqDash.core')
 
 /* @ngInject */
 function uiRouterConfig($stateProvider, $urlRouterProvider) {
+
+  // State Object Configuration
+  var dash  = {
+    url: '/dash',
+    templateUrl: 'app/dashboard/dashboard.html',
+    controller: 'Dashboard',
+    controllerAs: 'vm'
+  };
+  var home  = {
+    url: '/',
+    templateUrl: 'app/current/current.html',
+    controller: 'Current',
+    controllerAs: 'vm'
+  };
+
+
   $stateProvider
-    .state('index', {
+    .state('dash', dash)
+    .state('home', home);
+    /*
+    {
       url: '/',
       templateUrl: 'app/dashboard/overview.html',
       controller: function() {
@@ -16,6 +35,7 @@ function uiRouterConfig($stateProvider, $urlRouterProvider) {
       },
       controllerAs: 'rm'
     });
+    */
   $urlRouterProvider.otherwise('/');
 }
 
