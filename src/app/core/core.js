@@ -16,7 +16,7 @@ var core = angular.module('gpqDash.core', [
 ]);
 
 // Configure Routes and Material Theme
-core.
+core
   .config(mdThemingConfig);
 
 
