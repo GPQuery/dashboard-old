@@ -1,0 +1,103 @@
+// http://www.google.com/design/spec/components/data-tables.html
+/*
+$table-header-text: 
+
+
+*/
+
+// Variables
+// ------------------------------
+$baseline-grid:         8px !default;
+$baseline-text:         10px !default;
+
+// Table Cells
+$th-font-size:  rem(1.200) !default;
+$td-font-size:  rem(1.300) !default;
+$th-font-color: rgba(0, 0, 0, 0.54) !default;
+$td-font-color: rgba(0, 0, 0, 0.87) !default;
+
+// Table Rows
+$tr-background:         #ffffff !default;
+$tr-background-hover:   #eeeeee !default;
+$tr-background-select:  #e0e0e0 !default;
+
+// Cell Padding
+$td-padding-top:        6px !default;
+$td-padding-right:      12px !default;
+$td-padding-bottom:     6px !default;
+$td-padding-left:       12px !default;
+
+// Cell Margin
+$td-margin-top:         6px !default;
+$td-margin-right:       12px !default;
+$td-margin-bottom:      6px !default;
+$td-margin-left:        12px !default;
+
+// Table Padding
+$table-padding-top:     6px !default;
+$table-padding-right:   12px !default;
+$table-padding-bottom:  6px !default;
+$table-padding-left:    12px !default;
+
+$table-row-height:      36px !default;
+
+
+// Structure
+// ------------
+.gpqTable {
+  padding: $table-padding-top $table-padding-right $table-padding-bottom $table-padding-left;
+
+  thead,
+  tbody,
+  tfoot {
+
+    tr {
+      height: $table-row-height;
+      /*
+      display: flex;
+      flex-basis: 0%;
+      flex-direction: row;
+      flex-grow: 1;
+      flex-shrink: 1;
+      */
+      td, th {
+        text-align: right;
+        padding: $td-padding-top $td-padding-right $td-padding-bottom $td-padding-left;
+        margin: $td-margin-top $td-margin-right $td-margin-bottom $td-margin-left;
+        flex-basis: 0%;
+        flex-grow: 1;
+        flex-shrink: 1;
+
+        &.driver {
+          text-align: left;
+          flex-basis: 14%;
+        }
+        &.team {
+          text-align: left;
+          flex-basis: 12%;
+        }
+        &.status {
+          flex-basis: 8%;
+        }
+        &.fastTime {
+          flex-basis: 6%;
+        }
+        &.fastSpeed {
+          flex-basis: 9%;
+        }
+      }
+    }
+
+  }
+
+  thead {
+
+  }
+  tbody {
+
+  }
+  tfoot {
+
+  }
+
+}
