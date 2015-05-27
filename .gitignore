@@ -5,3 +5,4 @@ bower_components/
 dist/
 *ignore*
 .DS_Store
+src/assets/data/flags.json
