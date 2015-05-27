@@ -1,0 +1,58 @@
+
+// Typography
+// ------------------------
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+$font-family:       'Ubuntu', sans-serif !default;
+$font-family-mono:  'Ubuntu Mono', monospace !default;
+$default-font-size: 10px;
+
+table {
+
+  tr {
+    td, th {
+      vertical-align: middle;
+      
+    } 
+    /*
+    .team {
+      font-size:14px;
+      font-size:1.4rem;
+      line-height:14px;
+      font-weight:700;
+      background:#b0b0b0;
+      color:#fff;
+      display:inline-block;
+      padding:7px 10px 7px 0;
+      width:40px;
+      text-align:center;
+      -webkit-transform:skew(-30deg);
+      -moz-transform:skew(-30deg);
+      -o-transform:skew(-30deg);
+      -ms-transform:skew(-30deg);
+      transform:skew(-30deg);
+      position:relative
+      .text {
+        display:inline-block;
+        -webkit-transform:skew(30deg);
+        -moz-transform:skew(30deg);
+        -o-transform:skew(30deg);
+        -ms-transform:skew(30deg);
+        transform:skew(30deg)
+      }
+      .color {
+        width:10px;
+        position:absolute;
+        right:0;
+        top:0;
+        height:100%;
+        background:#000
+      }
+
+    }
+    */
+  }
+
+}
+

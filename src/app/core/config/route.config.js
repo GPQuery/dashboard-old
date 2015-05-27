@@ -2,10 +2,10 @@
 'use strict';
 
 angular.module('gpqDash.core')
-  .config(uiRouterConfig);
+  .config(routesConfig);
 
 /* @ngInject */
-function uiRouterConfig($stateProvider, $urlRouterProvider) {
+function routesConfig($stateProvider, $urlRouterProvider) {
 
   // State Object Configuration
   var dash  = {

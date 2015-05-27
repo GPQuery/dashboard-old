@@ -1,3 +1,6 @@
+@import 'core/typography';
+@import 'core/variables';
+
 $baseline-grid:   8px !default;
 
 $row-lg-height:   48px;
@@ -13,10 +16,6 @@ $row-sm-height:   24px;
 // @import url(http://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,400italic);
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,400italic);
 
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-$font-family:       'Ubuntu', sans-serif !default;
-$font-family-mono:  'Ubuntu Mono', monospace !default;
 
 
 html {
