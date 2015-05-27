@@ -2,7 +2,7 @@
     "MRData": {
         "xmlns": "http:\/\/ergast.com\/mrd\/1.4",
         "series": "f1",
-        "url": "http://ergast.com/api/f1/current/last/results.json",
+        "url": "http://erg  ast.com/api/f1/current/last/results.json",
         "limit": "30",
         "offset": "0",
         "total": "20",

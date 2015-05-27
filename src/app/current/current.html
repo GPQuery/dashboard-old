@@ -1,15 +1,6 @@
-<!--
-data.season
-data.round
-data.raceName
-data.Circuit.circuitName
-data.Circuit.Location.locality
-data.Circuit.Location.country
-data.date
-data.time
-data.Results[]
--->
-<md-toolbar class="md-tall" layout="column" layout-align="center center" ng-controller="Navbar as nm">
+<md-toolbar class="md-tall" 
+            layout="column" layout-align="center center" 
+            ng-controller="Navbar as nm">
 
   <div class="md-toolbar-tools" ng-cloak>
     <span>
@@ -18,17 +9,15 @@ data.Results[]
         <small>{{vm.data.Circuit.Location.locality}}, {{vm.data.Circuit.Location.country}}</small>
       </h3>
     </span>
-    <span flex>
-    </span>
   <!--
-    <span flex>
+    <span>
       Season {{vm.data.season}}    
       <md-icon md-svg-icon="assets/icons/ic_chevron_right_48px.svg"></md-icon>
       Round {{vm.data.round}}
       <md-icon md-svg-icon="assets/icons/ic_chevron_right_48px.svg"></md-icon>
       {{vm.data.raceName}}
     </span>
-    <span flex>
+    <span>
       {{vm.data.Circuit.circuitName}} 
       <md-icon md-svg-icon="assets/icons/ic_chevron_right_48px.svg"></md-icon>
       {{vm.data.Circuit.Location.locality}}, {{vm.data.Circuit.Location.country}}
@@ -38,7 +27,7 @@ data.Results[]
 
   <div class="md-toolbar-tools md-toolbar-tools-bottom">
 
-    <md-tabs flex md-border-bottom md-stretch-tabs="always" md-selected="vm.activeTab">
+    <md-tabs md-border-bottom md-stretch-tabs="always" md-selected="vm.activeTab">
 
       <md-tab>
         <md-tab-label>Overview</md-tab-label>
@@ -59,31 +48,44 @@ data.Results[]
 
 </md-toolbar>
 
-<section role="main" layout="column" layout-fill>
+<section role="main" layout="column" layout-fill layout-align="start center">
 <md-content layout="row">
 
-<table>
-  <thead>
-    <tr>
-      <th class="race"></th>
-      <th class="qual"></th>
-      <th class="name"></th>
-      <th class="team"></th>
-      <th class="laps"></th>
-      <th class="stat"></th>
-      <th class="pnts"></th>
+<table class="gpqTable" flex="100">
+  <thead layout="column">
+    <tr layout="row">
+      <th class="position">Pos</th>
+      <th class="grid">Grid</th>
+      <th class="driver">Driver</th>
+      <th class="team">Constructor</th>
+      <th class="laps">Laps</th>
+      <th class="status">Status</th>
+      <th class="points">Pts</th>
+      <th class="fastTime">Fastest</th>
+      <th class="fastLap">Lap</th>
+      <th class="fastSpeed">Avg Speed</th>
+      <th class="fastRank">Rank</th>
     </tr>
   </thead>
-  <tbody>
-    <tr ng-repeat="result in vm.data.Results">
-      <td>{{result.positionText}}</td>
-      <td>{{result.grid}}</td>
-      <td>{{result.Driver.givenName}} {{result.Driver.familyName}}</td>
-      <td>{{result.Constructor.name}}</td>
-      <td>{{result.laps}}</td>
-      <td ng-if="result.status === 'Finished'">{{result.Time.time}}</td>
-      <td ng-if="result.status !== 'Finished'">{{result.status}}</td>
-      <td>{{result.points}}</td>
+  <tbody layout="column">
+    <tr ng-repeat="result in vm.data.Results" layout="row">
+      <td class="position">{{result.positionText}}</td>
+      <td class="grid">{{result.grid}}</td>
+      <td class="driver">
+        {{result.Driver.givenName}} {{result.Driver.familyName}}
+        <span class="flag-icon-background" ng-class="{{result.Driver.nationality | lowercase}}"></span>
+      </td>
+      <td class="team">{{result.Constructor.name}}</td>
+      <td class="laps">{{result.laps}}</td>
+      <td class="status">
+        <span ng-if="result.status === 'Finished'">{{result.Time.time}}</span>
+        <span ng-if="result.status !== 'Finished'">{{result.status}}</span>
+      </td>
+      <td class="points">{{result.points}}</td>
+      <td class="fastTime" hide-sm>{{result.FastestLap.Time.time}}</td>
+      <td class="fastLap" hide-sm>{{result.FastestLap.lap}}</td>
+      <td class="fastSpeed" hide-sm>{{result.FastestLap.AverageSpeed.speed}} {{result.FastestLap.AverageSpeed.units}}</td>
+      <td class="fastRank" hide-sm>{{result.FastestLap.rank}}</td>
     </tr>
   </tbody>
 </table>

@@ -10,6 +10,8 @@ var core = angular.module('gpqDash.core', [
   'ngSanitize', 
   'ngTouch',
 
+  // Intra-App Modules
+
   // Third Party Modules
   'ui.router', 
   'nvd3'
@@ -19,7 +21,7 @@ var core = angular.module('gpqDash.core', [
 core
   .config(mdThemingConfig);
 
-
+/* @ngInject */
 function mdThemingConfig($mdThemingProvider) {
   
   var gpGreyMap   = $mdThemingProvider.extendPalette('grey', {
