@@ -1,14 +1,24 @@
-<md-toolbar class="md-tall" 
+<md-toolbar class="" 
             layout="column" layout-align="center center" 
             ng-controller="Navbar as nm">
 
   <div class="md-toolbar-tools" ng-cloak>
+    <md-icon></md-icon>
     <span>
-      <h2>{{vm.data.season}} {{vm.data.raceName}}</h2>
+      <h2>
+        Season {{vm.data.season}}    
+        <md-icon md-svg-icon="assets/icons/ic_chevron_right_48px.svg"></md-icon>
+        Round {{vm.data.round}}
+        <md-icon md-svg-icon="assets/icons/ic_chevron_right_48px.svg"></md-icon>
+        {{vm.data.raceName}}
+      </h2>
       <h3>
-        <small>{{vm.data.Circuit.Location.locality}}, {{vm.data.Circuit.Location.country}}</small>
+        <small>
+          {{vm.data.Circuit.circuitName}} · {{vm.data.Circuit.Location.locality}}, {{vm.data.Circuit.Location.country}}
+        </small>
       </h3>
     </span>
+    <span flex></span>
   <!--
     <span>
       Season {{vm.data.season}}    
@@ -22,7 +32,6 @@
       <md-icon md-svg-icon="assets/icons/ic_chevron_right_48px.svg"></md-icon>
       {{vm.data.Circuit.Location.locality}}, {{vm.data.Circuit.Location.country}}
     </span>
-  -->
   </div>
 
   <div class="md-toolbar-tools md-toolbar-tools-bottom">
@@ -44,6 +53,7 @@
 
     </md-tabs>
 
+  -->
   </div>
 
 </md-toolbar>
@@ -73,7 +83,7 @@
       <td class="grid">{{result.grid}}</td>
       <td class="driver">
         {{result.Driver.givenName}} {{result.Driver.familyName}}
-        <span class="flag-icon-background" ng-class="{{result.Driver.nationality | lowercase}}"></span>
+        <span class="flag-icon" ng-class="{{result.Driver.nationality | lowercase}}"></span>
       </td>
       <td class="team">{{result.Constructor.name}}</td>
       <td class="laps">{{result.laps}}</td>
@@ -92,8 +102,6 @@
 
 
 </md-content>
-<md-toolbar>
-</md-toolbar>
 <!--
   <div ui-view></div>
 -->
