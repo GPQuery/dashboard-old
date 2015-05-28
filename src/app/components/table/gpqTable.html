@@ -11,3 +11,48 @@
     <small class="pull-right page-title-subtle" data-ng-show="rightText">{{rightText}}</small>
     <div class="clearfix"></div>
 </div>
+
+<table class="gpqTable" flex="100">
+  <thead layout="column">
+    <tr layout="row">
+      <th class="position">Pos</th>
+      <th class="grid">Grid</th>
+      <th class="driver">Driver</th>
+      <th class="team">Constructor</th>
+      <th class="laps">Laps</th>
+      <th class="status">Status</th>
+      <th class="points">Pts</th>
+      <th class="fastTime">Fastest</th>
+      <th class="fastLap">Lap</th>
+      <th class="fastSpeed">Avg Speed</th>
+      <th class="fastRank">Rank</th>
+    </tr>
+  </thead>
+  <tbody layout="column">
+    <tr ng-repeat="result in vm.data.Results" layout="row">
+      <td class="position">{{result.positionText}}</td>
+      <td class="grid">{{result.grid}}</td>
+      <td class="driver">
+        {{result.Driver.givenName}} {{result.Driver .familyName}}
+        
+        
+        <span class="flag-icon" ng-class="{{result.Driver.nationality}}">
+          
+        </span>
+        
+        
+      </td>
+      <td class="team">{{result.Constructor.name}}</td>
+      <td class="laps">{{result.laps}}</td>
+      <td class="status">
+        <span ng-if="result.status === 'Finished'">{{result.Time.time}}</span>
+        <span ng-if="result.status !== 'Finished'">{{result.status}}</span>
+      </td>
+      <td class="points">{{result.points}}</td>
+      <td class="fastTime" hide-sm>{{result.FastestLap.Time.time}}</td>
+      <td class="fastLap" hide-sm>{{result.FastestLap.lap}}</td>
+      <td class="fastSpeed" hide-sm>{{result.FastestLap.AverageSpeed.speed}} {{result.FastestLap.AverageSpeed.units}}</td>
+      <td class="fastRank" hide-sm>{{result.FastestLap.rank}}</td>
+    </tr>
+  </tbody>
+</table>

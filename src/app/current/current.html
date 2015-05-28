@@ -26,9 +26,12 @@
 <section role="main" layout="column" layout-fill layout-align="start center">
 <md-content layout="row">
 
-<table class="gpqTable" flex="100">
-  <thead layout="column">
-    <tr layout="row">
+<table class="gpqTable">
+  <colgroup>
+    <col span="1" style="">
+  </colgroup>
+  <thead>
+    <tr>
       <th class="position">Pos</th>
       <th class="grid">Grid</th>
       <th class="driver">Driver</th>
@@ -42,31 +45,47 @@
       <th class="fastRank">Rank</th>
     </tr>
   </thead>
-  <tbody layout="column">
-    <tr ng-repeat="result in vm.data.Results" layout="row">
-      <td class="position">{{result.positionText}}</td>
-      <td class="grid">{{result.grid}}</td>
-      <td class="driver">
-        {{result.Driver.givenName}} {{result.Driver.familyName}}
-        
-        
-        <span class="flag-icon" ng-class="{{result.Driver.nationality}}">
-          
-        </span>
-        
-        
-      </td>
-      <td class="team">{{result.Constructor.name}}</td>
-      <td class="laps">{{result.laps}}</td>
-      <td class="status">
-        <span ng-if="result.status === 'Finished'">{{result.Time.time}}</span>
-        <span ng-if="result.status !== 'Finished'">{{result.status}}</span>
-      </td>
-      <td class="points">{{result.points}}</td>
-      <td class="fastTime" hide-sm>{{result.FastestLap.Time.time}}</td>
-      <td class="fastLap" hide-sm>{{result.FastestLap.lap}}</td>
-      <td class="fastSpeed" hide-sm>{{result.FastestLap.AverageSpeed.speed}} {{result.FastestLap.AverageSpeed.units}}</td>
-      <td class="fastRank" hide-sm>{{result.FastestLap.rank}}</td>
+  <tbody>
+    <tr ng-repeat="result in vm.data.Results">
+    
+      
+<td>
+  <span class="number position">{{result.positionText}}</span>
+</td>
+<td>
+  <span class="number grid">{{result.grid}}</span>
+</td>
+<td>
+  <span class="driver">
+    {{result.Driver.givenName}} {{result.Driver.familyName}}
+  </span>
+</td>
+<td>
+  <span class="team">{{result.Constructor.name}}</span>
+</td>
+<td>
+  <span class="number laps">{{result.laps}}</span>
+</td>
+<td>
+  <span class="status" ng-if="result.status === 'Finished'">{{result.Time.time}}</span>
+  <span class="status" ng-if="result.status !== 'Finished'">{{result.status}}</span>
+</span>
+</td>
+<td>
+  <span class="number points">{{result.points}}</span>
+</td>
+<td>
+  <span class="fastTime" hide-sm>{{result.FastestLap.Time.time}}</span>
+</td>
+<td>
+  <span class="number fastLap" hide-sm>{{result.FastestLap.lap}}</span>
+</td>
+<td>
+  <span class="fastSpeed" hide-sm>{{result.FastestLap.AverageSpeed.speed}} {{result.FastestLap.AverageSpeed.units}}</span>
+</td>
+<td>
+  <span class="number fastRank" hide-sm>{{result.FastestLap.rank}}</span>
+</td></td>
     </tr>
   </tbody>
 </table>

@@ -36,7 +36,7 @@ function routesConfig($stateProvider, $urlRouterProvider) {
       controllerAs: 'rm'
     });
     */
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/dash');
 }
 
 })();
