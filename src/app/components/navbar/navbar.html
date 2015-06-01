@@ -1,4 +1,7 @@
-<md-toolbar class="md-tall" layout="column" layout-align="center center" ng-controller="Navbar as nm">
+<md-toolbar layout="column" layout-align="center center" ng-controller="Navbar as nm">
+<!--
+            class="md-tall">
+-->
 
   <div class="md-toolbar-tools">
 
@@ -6,7 +9,7 @@
       <md-icon md-svg-icon="assets/icons/ic_menu_48px.svg"></md-icon>
     </md-button>
 
-    <form flex ng-submit="$event.preventDefault()">
+    <form flex="25" flex-sm ng-submit="$event.preventDefault()">
       <md-autocomplete
           placeholder="2015 Spanish Grand Prix"
           md-selected-item="nm.selectedItem"
@@ -26,8 +29,13 @@
       </md-autocomplete>
     </form>
 
-  </div>
+    <md-button class="md-icon-button" aria="Open Sidenav" ng-click="vm.toggleSidenav()">
+    </md-button>
 
+    <span flex></span>
+
+  </div>
+<!--
   <div class="md-toolbar-tools md-toolbar-tools-bottom">
 
     <md-tabs flex md-border-bottom md-stretch-tabs="always" md-selected="vm.activeTab">
@@ -48,5 +56,5 @@
     </md-tabs>
 
   </div>
-
+-->
 </md-toolbar>
